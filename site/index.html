@@ -1,25 +1,100 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Look up domain registration and DNS records. Evidence, not a scam verdict.">
-  <title>Domain desk</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <main class="shell">
-    <header><a class="back" href="https://markkimotho.github.io/projects/">← More projects</a><span>DNS resolver x</span></header>
-    <div class="hero"><p class="eyebrow">A small domain research tool</p><h1>What can we learn about a domain?</h1><p>Check registration dates and live DNS records. These are clues, not proof that a website is safe or unsafe.</p></div>
-    <form id="lookup"><label for="domain">Domain or URL</label><div class="input-row"><input id="domain" name="domain" type="text" inputmode="url" autocomplete="url" spellcheck="false" placeholder="example.com" required><button type="submit">Look up →</button></div></form>
-    <p id="status" class="status" role="status" aria-live="polite">Try a domain to begin.</p>
-    <section id="results" hidden aria-label="Lookup results">
-      <h2 id="result-domain"></h2>
-      <div class="results-grid"><article><h3>Registration</h3><p id="registration"></p><p id="age"></p><p id="rdap-note" class="note"></p></article><article><h3>DNS records</h3><div id="records"></div></article></div>
-      <div class="next"><h3>Before you trust a site</h3><p>Domain age and DNS are not a reputation check. Check the exact URL, compare it with the organisation’s known website, and use a dedicated security report.</p><a id="safety-link" target="_blank" rel="noopener noreferrer">Open Google Safe Browsing report ↗</a></div>
-    </section>
-    <footer>Registration data: public RDAP service. DNS: Cloudflare DNS-over-HTTPS. No lookup history is saved here.</footer>
-  </main>
-  <script type="module" src="./app.js"></script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Look up domain registration and DNS records. Evidence, not a scam verdict."
+    />
+    <title>Domain desk</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <div class="utility-bar">
+        <span>THE DOMAIN DESK</span><span>INDEPENDENT INTERNET RESEARCH</span>
+      </div>
+      <header>
+        <p class="masthead-kicker">A small corner of the World Wide Web</p>
+        <h1>
+          Domain <em>Desk</em><span class="star" aria-hidden="true">✳</span>
+        </h1>
+        <p>Look under the hood of a website address.</p>
+      </header>
+      <nav aria-label="Site links">
+        <a href="https://markkimotho.github.io/projects/"
+          >← Back to Mark's projects</a
+        ><span aria-hidden="true">◆</span><a href="#lookup">Start a lookup</a
+        ><span aria-hidden="true">◆</span><a href="#about">About this tool</a>
+      </nav>
+      <div class="intro">
+        <p class="eyebrow">Internet field notes / No. 01</p>
+        <h2>Who’s behind that address?</h2>
+        <p>
+          Look up registration dates and live DNS records. These are clues, not
+          proof that a website is safe or unsafe.
+        </p>
+      </div>
+      <form id="lookup">
+        <div class="form-heading">
+          <span aria-hidden="true">▣</span
+          ><label for="domain">Enter a domain or URL</label>
+        </div>
+        <div class="input-row">
+          <input
+            id="domain"
+            name="domain"
+            type="text"
+            inputmode="url"
+            autocomplete="url"
+            spellcheck="false"
+            placeholder="example.com"
+            required
+          /><button type="submit">SEARCH THE WEB »</button>
+        </div>
+      </form>
+      <p id="status" class="status" role="status" aria-live="polite">
+        Ready when you are. Try a domain to begin.
+      </p>
+      <section id="results" hidden aria-label="Lookup results">
+        <div class="results-heading">
+          <span>LOOKUP RESULTS FOR</span>
+          <h2 id="result-domain"></h2>
+        </div>
+        <div class="results-grid">
+          <article>
+            <h3>Registration</h3>
+            <p id="registration"></p>
+            <p id="age"></p>
+            <p id="rdap-note" class="note"></p>
+          </article>
+          <article>
+            <h3>DNS records</h3>
+            <div id="records"></div>
+          </article>
+        </div>
+        <div class="next">
+          <h3>Before you trust a site</h3>
+          <p>
+            Domain age and DNS are not a reputation check. Check the exact URL,
+            compare it with the organisation’s known website, and use a
+            dedicated security report.
+          </p>
+          <a id="safety-link" target="_blank" rel="noopener noreferrer"
+            >Open Google Safe Browsing report ↗</a
+          >
+        </div>
+      </section>
+      <footer id="about">
+        <div class="footer-mark">DD<span aria-hidden="true">✳</span></div>
+        <p>
+          Registration data: public RDAP service. DNS: Cloudflare
+          DNS-over-HTTPS.<br />No lookup history is saved here.
+        </p>
+        <p class="footer-small">Handmade for the curious web.</p>
+      </footer>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
 </html>
